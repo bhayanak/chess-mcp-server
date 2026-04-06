@@ -1,14 +1,15 @@
-# Chess MCP Server
-
 <div align="center">
 
-<img src="logo.svg" alt="Chess MCP Server Logo" width="200"/>
+<img src="logo.png" alt="Chess MCP Server Logo" width="200"/>
+
+# Chess MCP Server
 
 **A Model Context Protocol (MCP) server for Chess.com — enabling AI assistants to explore player profiles, ratings, game archives, leaderboards, clubs, and puzzles.**
 
 [![CI](https://github.com/bhayanak/chess-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/bhayanak/chess-mcp-server/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
+[![npm](https://img.shields.io/npm/v/@fazorboy/chess-mcp-server)](https://www.npmjs.com/package/@fazorboy/chess-mcp-server)
 
 </div>
 
@@ -24,42 +25,12 @@ This MCP server wraps the [Chess.com Published Data API](https://www.chess.com/n
 - Get daily puzzles
 - Explore leaderboards, clubs, and tournaments
 
-## Monorepo Structure
+## Packages
 
-```
-chess-mcp-server/
-├── packages/
-│   ├── chess-server/          # MCP server (TypeScript/Node.js)
-│   └── chess-vscode-extension/ # VS Code extension
-├── logo.svg / logo.png
-├── .github/workflows/ci.yml
-└── README.md
-```
-
-## Quick Start
-
-### Install & Build
-
-```bash
-pnpm install
-pnpm run build
-```
-
-### Run the MCP Server
-
-```bash
-cd packages/chess-server
-pnpm run dev
-```
-
-### Install VS Code Extension
-
-```bash
-cd packages/chess-vscode-extension
-pnpm run build
-pnpm run package
-# Install the generated .vsix file in VS Code
-```
+| Package | Description | Docs |
+|---------|-------------|------|
+| [`@fazorboy/chess-mcp-server`](packages/chess-server) | Core MCP server (npm) — use with Claude, VS Code, or any MCP client | [Server README](packages/chess-server/README.md) |
+| [`chess-mcp-vscode`](packages/chess-vscode-extension) | VS Code extension — one-click install, zero config | [Extension README](packages/chess-vscode-extension/README.md) |
 
 ## Available Tools (12)
 

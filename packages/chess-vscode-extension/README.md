@@ -1,6 +1,12 @@
+<div align="center">
+
+<img src="logo.png" alt="Chess MCP Server Logo" width="180"/>
+
 # Chess MCP — VS Code Extension
 
 A VS Code extension that integrates the Chess MCP Server, providing Chess.com data to AI assistants (GitHub Copilot, Claude, etc.) directly in your editor.
+
+</div>
 
 ## Features
 
@@ -30,11 +36,11 @@ Open VS Code Settings (`Cmd+,`) and search for "Chess MCP":
 
 ### Example Prompts
 
-- "Show me Magnus Carlsen's profile"
-- "What are Hikaru's blitz stats?"
-- "Compare MagnusCarlsen and Hikaru"
+- "Show me Magnus Carlsen's chess profile"
+- "What are Hikaru's blitz stats in chess?"
+- "Compare MagnusCarlsen and Hikaru chess profiles"
 - "Show me today's chess puzzle"
-- "List the top blitz players"
+- "List the top blitz players in chess"
 
 ## Troubleshooting
 

@@ -1,11 +1,14 @@
 {
-  "name": "chess-mcp-server",
+  "name": "@fazorboy/chess-mcp-server",
   "version": "0.1.0",
   "description": "MCP server for Chess.com — player profiles, ratings, game archives, leaderboards, clubs, puzzles",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
     "chess-mcp-server": "dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
