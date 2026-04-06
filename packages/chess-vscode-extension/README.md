@@ -9,23 +9,6 @@ A VS Code extension that integrates the Chess MCP Server, providing Chess.com da
 - Configurable settings via VS Code Settings UI
 - Automatic server restart on settings change
 
-## Installation
-
-### From VSIX
-
-1. Build the extension:
-   ```bash
-   cd packages/chess-vscode-extension
-   pnpm run build
-   pnpm run package
-   ```
-2. In VS Code: `Extensions` → `...` → `Install from VSIX...`
-3. Select the generated `.vsix` file
-
-### From Marketplace
-
-*(Coming soon)*
-
 ## Configuration
 
 Open VS Code Settings (`Cmd+,`) and search for "Chess MCP":
@@ -61,4 +44,4 @@ Open VS Code Settings (`Cmd+,`) and search for "Chess MCP":
 
 ## License
 
-MIT
+[MIT](LICENSE)

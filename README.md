@@ -89,41 +89,6 @@ Settings can be configured via VS Code settings or environment variables:
 | `chessMcp.timeoutMs` | `CHESS_TIMEOUT_MS` | `15000` | Request timeout (ms) |
 | `chessMcp.userAgent` | `CHESS_USER_AGENT` | `Chess-MCP/0.1.0` | User-Agent header |
 
-## Development
-
-```bash
-# Install dependencies
-pnpm install
-
-# Type check
-pnpm run typecheck
-
-# Run tests with coverage
-pnpm run test:coverage
-
-# Lint & format
-pnpm run lint
-pnpm run format
-
-# Full validation
-pnpm run validate
-```
-
-## Architecture
-
-```
-┌──────────────────┐     MCP (stdio)     ┌────────────────────────┐
-│   AI Client      │ ◄─────────────────► │  Chess MCP Server      │
-│ (Copilot/Claude) │                     │  (TypeScript/Node.js)  │
-└──────────────────┘                     └──────────┬─────────────┘
-                                                    │ HTTPS GET
-                                                    ▼
-                                         ┌────────────────────────┐
-                                         │  api.chess.com/pub     │
-                                         │  (Free, No Auth)       │
-                                         └────────────────────────┘
-```
-
 ## License
 
 [MIT](LICENSE)

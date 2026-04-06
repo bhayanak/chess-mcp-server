@@ -20,11 +20,10 @@ async function build() {
     entryPoints: [path.join(__dirname, '..', 'chess-server', 'src', 'index.ts')],
     bundle: true,
     outfile: 'dist/server.js',
-    format: 'esm',
+    format: 'cjs',
     platform: 'node',
     target: 'node18',
     sourcemap: true,
-    banner: { js: '#!/usr/bin/env node' },
   });
 }
 
