@@ -25,7 +25,9 @@
   "packageManager": "pnpm@10.32.1",
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "@vscode/vsce-sign",
+      "keytar"
     ]
   }
 }
