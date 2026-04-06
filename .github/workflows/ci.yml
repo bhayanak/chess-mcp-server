@@ -1,0 +1,34 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
+      - run: pnpm run lint
+      - run: pnpm run format
+      - run: pnpm run test:coverage
+      - run: pnpm run build
+      - run: cd packages/chess-vscode-extension && pnpm run package
+        if: matrix.node-version == 22
+      - uses: actions/upload-artifact@v4
+        if: matrix.node-version == 22
+        with:
+          name: chess-mcp-vsix
+          path: packages/chess-vscode-extension/*.vsix

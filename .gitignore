@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.vsix
+.env
+.env.*
+coverage/
+.DS_Store
+*.tgz
+*.log
+.turbo/
+*.md
+!README.md

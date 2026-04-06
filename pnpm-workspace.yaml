@@ -1,0 +1,13 @@
+packages:
+  - "packages/*"
+allowBuilds:
+  '"': true
+  '[': true
+  ']': true
+  b: true
+  d: true
+  e: true
+  i: true
+  l: true
+  s: true
+  u: true
