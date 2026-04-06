@@ -2,7 +2,7 @@
   "name": "chess-mcp-monorepo",
   "version": "0.1.0",
   "private": true,
-  "description": "Chess MCP Server monorepo \u2014 Chess.com player data for AI assistants",
+  "description": "Chess MCP Server monorepo — Chess.com player data for AI assistants",
   "scripts": {
     "build": "pnpm -r run build",
     "test": "pnpm -r run test",

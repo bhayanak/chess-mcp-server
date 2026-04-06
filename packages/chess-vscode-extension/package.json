@@ -1,89 +1,83 @@
 {
-  "name": "chess-mcp-vscode",
-  "displayName": "Chess MCP Server",
-  "description": "Chess.com MCP server for AI assistants — player profiles, ratings, game archives, leaderboards, clubs, and puzzles",
-  "version": "0.1.0",
-  "publisher": "bhayanak",
-  "license": "MIT",
-  "icon": "logo.png",
-  "engines": {
-    "vscode": "^1.99.0"
-  },
-  "categories": [
-    "AI",
-    "Chat"
-  ],
-  "keywords": [
-    "mcp",
-    "chess",
-    "chess.com",
-    "ratings",
-    "copilot",
-    "ai",
-    "model context protocol"
-  ],
-  "activationEvents": [],
-  "main": "./dist/extension.js",
-  "contributes": {
-    "configuration": {
-      "title": "Chess MCP",
-      "properties": {
-        "chessMcp.baseUrl": {
-          "type": "string",
-          "default": "https://api.chess.com",
-          "description": "Chess.com API base URL",
-          "order": 1
-        },
-        "chessMcp.maxGames": {
-          "type": "number",
-          "default": 50,
-          "description": "Maximum games returned per query",
-          "order": 2
-        },
-        "chessMcp.timeoutMs": {
-          "type": "number",
-          "default": 15000,
-          "description": "API request timeout in milliseconds",
-          "order": 3
-        },
-        "chessMcp.userAgent": {
-          "type": "string",
-          "default": "Chess-MCP/0.1.0",
-          "description": "Custom User-Agent header for Chess.com API requests",
-          "order": 4
-        }
-      }
+    "name": "chess-mcp-vscode",
+    "displayName": "Chess MCP Server",
+    "description": "Chess.com MCP server for AI assistants — player profiles, ratings, game archives, leaderboards, clubs, and puzzles",
+    "version": "0.1.0",
+    "publisher": "bhayanak",
+    "license": "MIT",
+    "icon": "logo.png",
+    "engines": {
+        "vscode": "^1.99.0"
     },
-    "mcpServers": {
-      "chess-mcp": {
-        "type": "stdio",
-        "command": "node",
-        "args": [
-          "${extensionPath}/dist/server.js"
-        ],
-        "env": {
-          "CHESS_BASE_URL": "${config:chessMcp.baseUrl}",
-          "CHESS_MAX_GAMES": "${config:chessMcp.maxGames}",
-          "CHESS_TIMEOUT_MS": "${config:chessMcp.timeoutMs}",
-          "CHESS_USER_AGENT": "${config:chessMcp.userAgent}"
-        }
-      }
+    "categories": [
+        "AI",
+        "Chat"
+    ],
+    "keywords": [
+        "mcp",
+        "chess",
+        "chess.com",
+        "ratings",
+        "copilot",
+        "ai",
+        "model context protocol"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "Chess MCP",
+            "properties": {
+                "chessMcp.baseUrl": {
+                    "type": "string",
+                    "default": "https://api.chess.com",
+                    "description": "Chess.com API base URL",
+                    "order": 1
+                },
+                "chessMcp.maxGames": {
+                    "type": "number",
+                    "default": 50,
+                    "description": "Maximum games returned per query",
+                    "order": 2
+                },
+                "chessMcp.timeoutMs": {
+                    "type": "number",
+                    "default": 15000,
+                    "description": "API request timeout in milliseconds",
+                    "order": 3
+                },
+                "chessMcp.userAgent": {
+                    "type": "string",
+                    "default": "Chess-MCP/0.1.0",
+                    "description": "Custom User-Agent header for Chess.com API requests",
+                    "order": 4
+                }
+            }
+        },
+        "mcpServerDefinitionProviders": [
+            {
+                "id": "chess-mcp-servers",
+                "label": "Chess MCP Server"
+            }
+        ]
+    },
+    "extensionDependencies": [],
+    "scripts": {
+        "build": "node build.cjs",
+        "package": "vsce package --no-dependencies",
+        "typecheck": "tsc --noEmit"
+    },
+    "devDependencies": {
+        "@types/node": "^20.19.39",
+        "@types/vscode": "^1.99.0",
+        "@vscode/vsce": "^3.7.1",
+        "esbuild": "^0.25.0",
+        "typescript": "^5.8.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bhayanak/chess-mcp-server"
     }
-  },
-  "extensionDependencies": [],
-  "scripts": {
-    "build": "node build.cjs",
-    "package": "vsce package --no-dependencies",
-    "typecheck": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.99.0",
-    "@vscode/vsce": "^3.7.1",
-    "esbuild": "^0.25.0",
-    "typescript": "^5.8.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bhayanak/chess-mcp-server"
-  }
 }

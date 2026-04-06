@@ -56,6 +56,9 @@ importers:
 
   packages/chess-vscode-extension:
     devDependencies:
+      '@types/node':
+        specifier: ^20.19.39
+        version: 20.19.39
       '@types/vscode':
         specifier: ^1.99.0
         version: 1.110.0

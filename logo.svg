@@ -1,157 +1,154 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"/>
-      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1"/>
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="50%" style="stop-color:#161b22"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
     </linearGradient>
-    <linearGradient id="knightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e2e2e2;stop-opacity:1"/>
-      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#c0c0c0;stop-opacity:1"/>
+    <linearGradient id="knightGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8e8e8"/>
+      <stop offset="50%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#aaaaaa"/>
     </linearGradient>
     <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#ffaa00;stop-opacity:1"/>
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="50%" style="stop-color:#ffec80"/>
+      <stop offset="100%" style="stop-color:#e6a800"/>
     </linearGradient>
-    <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#3a7bd5;stop-opacity:0.8"/>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00e5ff"/>
+      <stop offset="100%" style="stop-color:#0091ea"/>
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="shadow">
-      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
     </filter>
+    <clipPath id="circleClip">
+      <circle cx="256" cy="256" r="248"/>
+    </clipPath>
   </defs>
 
-  <!-- Background circle -->
-  <circle cx="256" cy="256" r="250" fill="url(#bgGrad)" stroke="#3a7bd5" stroke-width="4"/>
+  <!-- Background -->
+  <circle cx="256" cy="256" r="256" fill="#0d1117"/>
+  <circle cx="256" cy="256" r="248" fill="url(#bgGrad)" stroke="url(#neonCyan)" stroke-width="3" opacity="0.9"/>
 
-  <!-- Circuit board pattern (AI motif) -->
-  <g stroke="url(#circuitGrad)" stroke-width="1.5" fill="none" opacity="0.4" filter="url(#glow)">
-    <!-- Horizontal lines -->
-    <line x1="60" y1="120" x2="160" y2="120"/>
-    <line x1="350" y1="120" x2="450" y2="120"/>
-    <line x1="60" y1="390" x2="160" y2="390"/>
-    <line x1="350" y1="390" x2="450" y2="390"/>
-
-    <!-- Vertical lines -->
-    <line x1="100" y1="80" x2="100" y2="160"/>
-    <line x1="412" y1="80" x2="412" y2="160"/>
-    <line x1="100" y1="350" x2="100" y2="430"/>
-    <line x1="412" y1="350" x2="412" y2="430"/>
-
-    <!-- Connection dots -->
-    <circle cx="100" cy="120" r="4" fill="url(#circuitGrad)"/>
-    <circle cx="160" cy="120" r="3" fill="url(#circuitGrad)"/>
-    <circle cx="412" cy="120" r="4" fill="url(#circuitGrad)"/>
-    <circle cx="350" cy="120" r="3" fill="url(#circuitGrad)"/>
-    <circle cx="100" cy="390" r="4" fill="url(#circuitGrad)"/>
-    <circle cx="160" cy="390" r="3" fill="url(#circuitGrad)"/>
-    <circle cx="412" cy="390" r="4" fill="url(#circuitGrad)"/>
-    <circle cx="350" cy="390" r="3" fill="url(#circuitGrad)"/>
-
-    <!-- Diagonal traces -->
-    <line x1="130" y1="120" x2="170" y2="160"/>
-    <line x1="382" y1="120" x2="342" y2="160"/>
-    <line x1="130" y1="390" x2="170" y2="350"/>
-    <line x1="382" y1="390" x2="342" y2="350"/>
-
-    <!-- Additional circuit elements -->
-    <rect x="75" y="195" width="20" height="12" rx="2"/>
-    <rect x="417" y="195" width="20" height="12" rx="2"/>
-    <rect x="75" y="305" width="20" height="12" rx="2"/>
-    <rect x="417" y="305" width="20" height="12" rx="2"/>
-
-    <line x1="95" y1="201" x2="140" y2="201"/>
-    <line x1="372" y1="201" x2="417" y2="201"/>
-    <line x1="95" y1="311" x2="140" y2="311"/>
-    <line x1="372" y1="311" x2="417" y2="311"/>
+  <!-- Subtle grid -->
+  <g clip-path="url(#circleClip)" opacity="0.05" stroke="#00e5ff" stroke-width="0.5">
+    <line x1="0" y1="64" x2="512" y2="64"/><line x1="0" y1="128" x2="512" y2="128"/>
+    <line x1="0" y1="192" x2="512" y2="192"/><line x1="0" y1="256" x2="512" y2="256"/>
+    <line x1="0" y1="320" x2="512" y2="320"/><line x1="0" y1="384" x2="512" y2="384"/>
+    <line x1="0" y1="448" x2="512" y2="448"/>
+    <line x1="64" y1="0" x2="64" y2="512"/><line x1="128" y1="0" x2="128" y2="512"/>
+    <line x1="192" y1="0" x2="192" y2="512"/><line x1="256" y1="0" x2="256" y2="512"/>
+    <line x1="320" y1="0" x2="320" y2="512"/><line x1="384" y1="0" x2="384" y2="512"/>
+    <line x1="448" y1="0" x2="448" y2="512"/>
   </g>
 
-  <!-- Chess knight piece -->
-  <g transform="translate(256, 280)" filter="url(#shadow)">
-    <!-- Base -->
-    <rect x="-70" y="70" width="140" height="25" rx="8" fill="url(#knightGrad)" opacity="0.9"/>
-    <rect x="-55" y="55" width="110" height="20" rx="5" fill="url(#knightGrad)"/>
+  <!-- Circuit traces -->
+  <g stroke="url(#neonCyan)" stroke-width="1.5" fill="none" opacity="0.3" filter="url(#glow)">
+    <path d="M 55,180 L 120,180 L 140,200"/>
+    <circle cx="55" cy="180" r="3" fill="#00e5ff"/><circle cx="140" cy="200" r="2.5" fill="#00e5ff"/>
+    <path d="M 65,260 L 115,260"/>
+    <circle cx="65" cy="260" r="3" fill="#00e5ff"/>
+    <path d="M 55,340 L 100,340 L 120,320"/>
+    <circle cx="55" cy="340" r="3" fill="#00e5ff"/><circle cx="120" cy="320" r="2.5" fill="#00e5ff"/>
+    <path d="M 457,180 L 392,180 L 372,200"/>
+    <circle cx="457" cy="180" r="3" fill="#00e5ff"/><circle cx="372" cy="200" r="2.5" fill="#00e5ff"/>
+    <path d="M 447,260 L 397,260"/>
+    <circle cx="447" cy="260" r="3" fill="#00e5ff"/>
+    <path d="M 457,340 L 412,340 L 392,320"/>
+    <circle cx="457" cy="340" r="3" fill="#00e5ff"/><circle cx="392" cy="320" r="2.5" fill="#00e5ff"/>
+    <rect x="72" y="210" width="16" height="8" rx="1.5"/>
+    <rect x="424" y="210" width="16" height="8" rx="1.5"/>
+    <rect x="72" y="300" width="16" height="8" rx="1.5"/>
+    <rect x="424" y="300" width="16" height="8" rx="1.5"/>
+  </g>
 
-    <!-- Knight body -->
+  <!-- Dashed orbit ring -->
+  <circle cx="256" cy="270" r="148" fill="none" stroke="#7c4dff" stroke-width="1.2" stroke-dasharray="10 8 3 8" opacity="0.3"/>
+
+  <!-- Chess Knight - Unicode-style classic Staunton horse silhouette -->
+  <g transform="translate(256, 265)" filter="url(#shadow)">
+    <!-- Pedestal base -->
+    <path d="M -75,115 Q -75,122 -68,122 L 68,122 Q 75,122 75,115 L 75,108 Q 75,102 68,102 L -68,102 Q -75,102 -75,108 Z" fill="#b0b0b0"/>
+    <path d="M -65,102 Q -65,96 -58,96 L 58,96 Q 65,96 65,102 L 65,96 L -65,96 Z" fill="url(#knightGrad)"/>
+    <rect x="-60" y="88" width="120" height="12" rx="4" fill="url(#knightGrad)"/>
+
+    <!-- Knight body - classic recognizable horse head facing right -->
+    <!-- This is a single clean path forming the iconic chess knight shape -->
     <path d="
-      M -40,55
-      L -45,20
-      C -48,-10 -40,-40 -30,-60
-      C -20,-80 -10,-100 -5,-120
-      C 0,-135 10,-145 20,-150
-      C 30,-155 40,-148 45,-135
-      C 50,-122 48,-105 40,-90
-      L 30,-75
-      C 35,-70 45,-60 50,-45
-      C 55,-30 55,-10 50,10
-      L 45,55
+      M -45,88
+      L -45,40
+      C -45,20 -40,-5 -32,-25
+      C -24,-45 -14,-62 -4,-75
+      C 6,-88 15,-96 20,-100
+      C 28,-106 35,-108 40,-102
+      C 48,-94 52,-80 50,-65
+      C 48,-52 42,-42 34,-34
+      L 22,-24
+      C 30,-18 38,-8 44,5
+      C 50,20 52,38 50,55
+      L 48,88
       Z
-    " fill="url(#knightGrad)" stroke="#999" stroke-width="1.5"/>
+    " fill="url(#knightGrad)" stroke="#909090" stroke-width="2" stroke-linejoin="round"/>
 
-    <!-- Knight ear -->
+    <!-- Horse head top (forehead/poll flowing to muzzle) - facing right -->
+    <!-- Ear - pointed upward -->
     <path d="
-      M 5,-140
-      C 0,-160 5,-175 15,-175
-      C 25,-175 30,-160 25,-145
-    " fill="url(#knightGrad)" stroke="#999" stroke-width="1"/>
+      M 10,-98
+      C 8,-118 14,-132 22,-132
+      C 30,-132 34,-118 30,-100
+    " fill="url(#knightGrad)" stroke="#909090" stroke-width="1.5"/>
 
-    <!-- Knight eye -->
-    <circle cx="20" cy="-110" r="6" fill="#1a1a2e"/>
-    <circle cx="22" cy="-112" r="2" fill="#fff"/>
+    <!-- Mane flowing down the back of the neck -->
+    <path d="M -8,-88 C -18,-75 -28,-58 -34,-40 C -38,-25 -40,-8 -40,10" fill="none" stroke="#c0c0c0" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M -2,-85 C -12,-72 -22,-55 -28,-38 C -32,-22 -34,-5 -34,12" fill="none" stroke="#d0d0d0" stroke-width="3.5" stroke-linecap="round" opacity="0.4"/>
+    <path d="M 4,-80 C -5,-68 -14,-52 -20,-36 C -24,-22 -26,-6 -26,10" fill="none" stroke="#ddd" stroke-width="2.5" stroke-linecap="round" opacity="0.3"/>
 
-    <!-- Knight nostril -->
-    <circle cx="-15" cy="-65" r="3" fill="#888"/>
+    <!-- Eye - prominent, characteristic of chess knight -->
+    <circle cx="32" cy="-68" r="8" fill="#161b22"/>
+    <circle cx="34" cy="-70" r="3" fill="#ffffff"/>
 
-    <!-- Knight mane -->
-    <path d="
-      M -5,-140
-      C -15,-130 -25,-115 -30,-100
-      C -35,-85 -38,-70 -40,-55
-    " fill="none" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>
-    <path d="
-      M 0,-135
-      C -10,-125 -20,-110 -25,-95
-      C -30,-80 -33,-65 -35,-50
-    " fill="none" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+    <!-- Nostril -->
+    <ellipse cx="46" cy="-40" rx="4" ry="5" fill="#777" opacity="0.7"/>
 
-    <!-- Mouth line -->
-    <path d="M -30,-60 C -20,-55 -10,-58 0,-65" fill="none" stroke="#888" stroke-width="1.5"/>
+    <!-- Mouth/jaw line -->
+    <path d="M 42,-30 C 46,-22 48,-14 48,-4" fill="none" stroke="#999" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Cheek contour -->
+    <path d="M 26,-55 C 30,-48 34,-40 36,-30" fill="none" stroke="#bbb" stroke-width="1" opacity="0.3"/>
   </g>
 
-  <!-- Crown on top -->
-  <g transform="translate(256, 115)" filter="url(#glow)">
+  <!-- Crown positioned on the knight's head -->
+  <g transform="translate(266, 120)" filter="url(#glowStrong)">
     <path d="
-      M -30,15
-      L -35,-5
-      L -20,5
-      L -10,-15
-      L 0,5
-      L 10,-15
-      L 20,5
-      L 35,-5
-      L 30,15
+      M -25,18
+      L -30,-2
+      L -18,6
+      L -10,-12
+      L 0,6
+      L 10,-12
+      L 18,6
+      L 30,-2
+      L 25,18
       Z
-    " fill="url(#crownGrad)" stroke="#cc8800" stroke-width="1.5"/>
-    <!-- Crown jewels -->
-    <circle cx="-10" cy="-10" r="3" fill="#ff4444"/>
-    <circle cx="10" cy="-10" r="3" fill="#4444ff"/>
-    <circle cx="0" cy="0" r="3" fill="#44ff44"/>
-    <!-- Crown base -->
-    <rect x="-30" y="15" width="60" height="6" rx="2" fill="url(#crownGrad)" stroke="#cc8800" stroke-width="1"/>
+    " fill="url(#crownGrad)" stroke="#cc9900" stroke-width="1.2" stroke-linejoin="round"/>
+    <circle cx="-10" cy="-7" r="2.5" fill="#ff1744"/>
+    <circle cx="10" cy="-7" r="2.5" fill="#2979ff"/>
+    <circle cx="0" cy="4" r="2.5" fill="#00e676"/>
+    <rect x="-25" y="18" width="50" height="5" rx="2" fill="url(#crownGrad)" stroke="#cc9900" stroke-width="0.8"/>
   </g>
 
-  <!-- Glowing ring around the knight -->
-  <circle cx="256" cy="260" r="130" fill="none" stroke="url(#circuitGrad)" stroke-width="1.5" opacity="0.3" stroke-dasharray="8 6"/>
+  <!-- MCP text -->
+  <text x="256" y="458" text-anchor="middle" font-family="'SF Mono','Fira Code','Cascadia Code','Consolas',monospace" font-size="28" font-weight="bold" fill="url(#neonCyan)" filter="url(#glow)" letter-spacing="10">MCP</text>
 
-  <!-- Text: "MCP" at bottom -->
-  <text x="256" y="460" text-anchor="middle" font-family="'Courier New', monospace" font-size="32" font-weight="bold" fill="#00d2ff" filter="url(#glow)" letter-spacing="8">MCP</text>
+  <!-- Outer subtle ring -->
+  <circle cx="256" cy="256" r="250" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.12"/>
 </svg>
